@@ -14,7 +14,31 @@
 // ● Extra Credit: “-42” → -42
 
 const stringToNumber = (data) => {
-  return parseInt(data, 10) || 0;
+  // return parseInt(data, 10) || 0;
+  let finalNumber = 0;
+  const dictInt = {
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+  };
+  for (let i = 0; i < data.length; i++) {
+    let singleChar = data[i];
+    let val = dictInt[singleChar];
+    if (val === undefined) {
+      break;
+    }
+    finalNumber = finalNumber + val;
+    finalNumber = finalNumber * 10;
+  }
+  finalNumber = finalNumber / 10;
+  return finalNumber;
 };
 
 module.exports = stringToNumber;
