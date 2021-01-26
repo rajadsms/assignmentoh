@@ -1,0 +1,30 @@
+<!doctype html>
+<body>
+  <button id="btn-0">Button 1</button>
+  <button id="btn-1">Button 2</button>
+  <button id="btn-2">Button 3</button>
+</body>
+<script type="text/javascript">
+  const prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+
+  //Using IIFE
+  for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+    (function(index){
+    document.getElementById(`btn-${index}`).onclick = () => {
+    
+      alert(prizes[index]);
+};
+  })(btnNum)
+}
+
+//By Changing the scope from funcion level to block level
+for (let btnNum = 0; btnNum < prizes.length; btnNum++) {
+  
+    document.getElementById(`btn-${btnNum}`).onclick = () => {
+    
+      alert(prizes[btnNum]);
+};
+
+}
+  </script>
+</html>
