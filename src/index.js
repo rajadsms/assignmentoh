@@ -16,6 +16,7 @@
 const stringToNumber = (data) => {
   // return parseInt(data, 10) || 0;
   let finalNumber = 0;
+  //Integer dictionary to get the value fron string
   const dictInt = {
     0: 0,
     1: 1,
@@ -28,12 +29,16 @@ const stringToNumber = (data) => {
     8: 8,
     9: 9,
   };
+  //Iterate the string
   for (let i = 0; i < data.length; i++) {
     let singleChar = data[i];
+    //Get the character
     let val = dictInt[singleChar];
+    //If it found NAN it will break the loop
     if (val === undefined) {
       break;
     }
+    //creating the number
     finalNumber = finalNumber + val;
     finalNumber = finalNumber * 10;
   }
